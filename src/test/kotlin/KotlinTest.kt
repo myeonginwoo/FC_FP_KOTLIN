@@ -57,7 +57,15 @@ class KotlinTest {
     @Test
     fun testMap() {
         assertEquals(List.map(intList, { it * 2 }), Cons(2, Cons(4, Cons(6, Cons(8, Nil)))))
-        assertEquals(List.map(intList, { "kotlin : $it" }), Cons("kotlin : 1", Cons("kotlin : 2", Cons("kotlin : 3", Cons("kotlin : 4", Nil)))))
+        assertEquals(List.map(intList, { "kotlin : $it" }),
+            Cons("kotlin : 1", Cons("kotlin : 2", Cons("kotlin : 3", Cons("kotlin : 4", Nil)))))
+    }
+
+    @Test
+    fun testMap2() {
+        assertEquals(intList.map({ it * 2 }), Cons(2, Cons(4, Cons(6, Cons(8, Nil)))))
+        assertEquals(intList.map({ "kotlin : $it" }),
+            Cons("kotlin : 1", Cons("kotlin : 2", Cons("kotlin : 3", Cons("kotlin : 4", Nil)))))
     }
 }
 
